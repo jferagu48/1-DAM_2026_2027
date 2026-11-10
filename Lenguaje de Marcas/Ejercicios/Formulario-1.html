@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ejercicio 1. Formulario de datos personales</h2>
+    <form action="" method="post">
+        <legend><b>Datos Personales</b></legend>
+        <br>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <br><br>
+        <label for="correo">Correo electrónico</label>
+        <input type="gmail" name="correo" id="correo">
+        <br><br>
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Z a-z]">
+        <br><br>
+        <label for="codigopostal">Codigo Postal</label>
+        <input type="text" name="codigopostal" id="codigopostal" pattern="[0-9]{5}">
+        <br><br>
+        
+        <input type="submit" name="enviar" id="enviar">
+        
+        <input type="reset" name="limpiar" id="limpiar">
+        
+    </form>
+    <br>
+    <hr>
+    <h2>Matricula DAM</h2>
+    <form action="" method="post">
+        <fieldset>
+            <legend><b>Datos Personales</b></legend>
+            <br>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <br><br>
+        </fieldset>
+        
+        <label for="ciclo">Ciclo:</label>
+            <select id="ciclo" name="ciclo">
+            <option value="">Selecciona una opción</option>
+            <option value="DAM">DAM</option>
+            <option value="DAW">DAW</option>
+            <option value="ASIR">ASIR</option>
+            </select>
+        <br><br>
+        <label for="turno">Curso</label>
+        <br>
+        <input type="radio" name="curso" id="turno" value="primero">
+        <label for="primero">Primero</label>
+        <input type="radio" name="curso" id="turno" value="segundo">
+        <label for="segundo">Segundo</label>
+        <br><br>
+        <label for="turno">Turno</label>
+        <br>
+        <input type="radio" name="turno" id="turno" value="mañana" selected>
+        <label for="mañana">Mañana</label>
+        <input type="radio" name="turno" id="turno" value="tarde">
+        <label for="tarde">Tarde</label>
+        <br><br>
+        <label for="modalidad">Modalidad</label>
+        <br>
+        <input type="radio" name="modalidad" id="modalidad" value="presencial">
+        <label for="presencial">Mañana</label>
+        <input type="radio" name="modalidad" id="modalidad" value="online">
+        <label for="online">Tarde</label>
+        <input type="radio" name="modalidad" id="modalidad" value="semipresencial">
+        <label for="semipresencial">Semipresencial</label>
+        <br><br>
+        <label for="modulos">Modulos</label>
+        <br>
+        <input type="checkbox" name="modulos" id="modulos" value="programacion">
+        <label for="programacion">Programación,</label>
+        <input type="checkbox" name="modulos" id="modulos" value="basededatos">
+        <label for="basededatos">Bases de Datos,</label>
+        <input type="checkbox" name="modulos" id="modulos" value="lenguajedemarcas">
+        <label for="lenguajedemarcas">Lenguaje de Marcas,</label>
+        <input type="checkbox" name="modulos" id="modulos" value="sistemasinformaticos">
+        <label for="sistemasinformaticos">Sistemas informaticos,</label>
+        <input type="checkbox" name="modulos" id="modulos" value="entornodesarrollo">
+        <label for="entornodesarrollo">Entorno de desarrollo,</label>
+        <br><br>
+        <input type="submit" name="enviar" id="enviar">
+        
+        <input type="reset" name="limpiar" id="limpiar">
+
+    </form>
+    <br>
+    <hr>
+    <form action="" method="post">
+        <fieldset>
+            <legend><b><font size="4">Responsable</font></b></legend>
+            <label for="datospersonales">Datos Personales</label>
+            <br><br>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required>
+            <br><br>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" required>
+        </fieldset>
+        <label for="gmail">Correo</label>
+        <input type="gmail" name="gmail" id="gmail">
+        <br><br>
+        <label for="departamento">Departamento</label>
+            <select id="departamento" name="departamento">
+            <option value="">Selecciona una opción</option>
+            <option value="oficina">Oficina</option>
+            <option value="obra">Obra</option>
+            <option value="recursoshumanos">Recursos Humanos</option>
+            </select>
+        <br><br>
+        <label for="fecha">Fecha</label>
+        <input type="date" name="fecha" id="fecha">
+        <br><br>
+        <label for="horainicio">Hora de inicio</label>
+        <input type="time" name="horainicio" id="horainicio">
+        <label for="horafinal">Hora final</label>
+        <input type="time" name="horafinal" id="horafinal">
+    </form>
+</body>
+</html>

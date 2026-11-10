@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--id nombre interno en el navegador y es unico para representar -->
+    <!--nombre de distintos atributos-->
+    <!--DOM (Document Objet Model) HTML (principal)= Head / Body= etiquetas(p=img,......)-->
+    <!--input Principal atributo-->
+    <!--number validacion de usuario campo numerico establecer min y maximo que introduce-->
+    <!--value contenido general de esa caja de texto-->
+    <!--checkbox puedes selecionar varias opciones y radio una u otra-->
+    <!--range elegir un minimo y max numero en barra visual-->
+    <!--hidden campos que estan ahi pero no son visibles al usuario-->
+    <!--submit enviar(uno por formulario),button (boton generico al que ahi que generar que queremos que haga)-->
+    <!--label etiqueta asociado al campo de un formulario/ for debe tener mismo nombre que input dado-->
+    <!--textarea commentario, numero de fila de caja de texto y columna-->
+    <!--select desplegable de las opciones que podemos elegir /option value como default sigue esa dinamica de etiqueta-->
+    <!--fieldset organizar secciones de datos personales y se representa en el formulario-->
+    <!--datalist  lista desplegables-->
+
+    <!--Atributos importantes-->
+    <!--placeholder texto por defecto-->
+    <!--required campos obligatorio (delimitamos campo obligatorio de rellenar)-->
+    <!--readonly informacion que el usuario puede ver pero no modificar-->
+    <!--disable informacion que no se puede modificar diferencia que este nunca se envia al servidor solo consulta-->
+    <!--paternn espeficicar que formato queremos aqui / pattern="[0-9]{5}" (5 caracteres numericos y va a utilizar del 0 al 9)/ pattern="[0-9]{8}[A-Za-z]" 8 caracteres y va a usar una letra de la A a Z-->
+    <!--checked uso mas habitual y selected para seleccionarlo-->
+    <!--multiple selecionar varias opciones-->
+    <!--accept delimita que tipo de archivo extension vas a permitir enviar-->
+
+    <h1>Registro de alumnos</h1>
+<form action="" method="post">
+<fieldset>
+<legend>Datos personales</legend>
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+<br><br>
+<label for="apellidos">Apellidos:</label>
+<input type="text" id="apellidos" name="apellidos" required>
+<br><br>
+<label for="fecha">Fecha de nacimiento:</label>
+<input type="date" id="fecha" name="fecha">
+<br><br>
+<label for="dni">DNI:</label>
+<input type="text" id="dni" name="dni"
+pattern="[0-9]{8}[A-Za-z]" required>
+</fieldset>
+<fieldset>
+<legend>Contacto</legend>
+<label for="email">Correo:</label>
+<input type="email" id="email" name="email" required>
+<br><br>
+<label for="telefono">Teléfono:</label>
+<input type="tel" id="telefono" name="telefono">
+</fieldset>
+<fieldset>
+<legend>Información académica</legend>
+<label for="ciclo">Ciclo:</label>
+<select id="ciclo" name="ciclo" required>
+<option value="">Selecciona un ciclo</option>
+<option value="DAM">DAM</option>
+<option value="DAW">DAW</option>
+<option value="ASIR">ASIR</option>
+</select>
+<br><br>
+<p>Modalidad:</p>
+<input type="radio" id="presencial" name="modalidad"
+value="presencial">
+<label for="presencial">Presencial</label>
+<input type="radio" id="distancia" name="modalidad"
+value="distancia">
+<label for="distancia">A distancia</label>
+</fieldset>
+<br>
+<input type="checkbox" id="acepto" name="acepto"
+value="si" required>
+<label for="acepto">Acepto las condiciones.</label>
+<br><br>
+<input type="submit" value="Registrarse">
+<input type="reset" value="Limpiar">
+</form>
+<br>
+<hr>
+<form>
+<p>Turno preferido:</p>
+<input type="radio" id="manana" name="turno" value="manana">
+<label for="manana">Mañana</label>
+<input type="radio" id="tarde" name="turno" value="tarde">
+<label for="tarde">Tarde</label>
+<p>Módulos que te interesan:</p>
+<input type="checkbox" id="prog" name="modulos" value="programacion">
+<label for="prog">Programación</label>
+<input type="checkbox" id="bbdd" name="modulos" value="bases">
+<label for="bbdd">Bases de datos</label>
+<input type="checkbox" id="lm" name="modulos" value="marcas">
+<label for="lm">Lenguajes de marcas</label>
+<input type="submit" value="Registrarse">
+<input type="reset" value="Limpiar">
+</form>
+<br>
+<hr>
+<h1>Contacta con nosotros</h1>
+<form action="" method="post">
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+<br><br>
+<label for="email">Correo electrónico:</label>
+<input type="email" id="email" name="email" required>
+<br><br>
+<label for="asunto">Asunto:</label>
+<select id="asunto" name="asunto">
+<option value="consulta">Consulta</option>
+<option value="soporte">Soporte técnico</option>
+<option value="presupuesto">Presupuesto</option>
+<option value="otros">Otros</option>
+</select>
+<br><br>
+<label for="mensaje">Mensaje:</label><br>
+<textarea id="mensaje" name="mensaje" rows="6"
+cols="45" maxlength="500" required></textarea>
+<br><br>
+<input type="checkbox" id="privacidad" name="privacidad" value="aceptada" required>
+<label for="privacidad">Acepto la política de privacidad.</label>
+<br><br>
+<input type="submit" value="Enviar consulta">
+</form>
+<br>
+<hr>
+<h1>Inscripcion en Curso</h1>
+<form action="" method="post"
+enctype="multipart/form-data">
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+<br><br>
+<label for="documento">Documento PDF:</label>
+<input type="file" id="documento" name="documento" accept=".pdf" required>
+<br><br>
+<input type="submit" value="Enviar archivo">
+</form>
+<br>
+<hr>
+<h1>Formulario de contacto</h1>
+<form id="formulario">
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+<br><br>
+<label for="email">Correo:</label>
+<input type="email" id="email" name="email" required>
+<br><br>
+<label for="mensaje">Mensaje:</label><br>
+<textarea id="mensaje" name="mensaje"
+rows="5" cols="35"></textarea>
+<br><br>
+<button type="submit">
+<img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" alt="Enviar formulario" width="30">
+</button>
+<button type="reset">
+<img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
+</button>
+<button type="button" id="inicio">
+<img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Home.png" alt="Ir a inicio" width="30">
+</button>
+</form>
+
+
+<script>
+const formulario = document.getElementById("formulario");
+const botonInicio = document.getElementById("inicio");
+formulario.addEventListener("submit", function(event) {
+event.preventDefault();
+alert("Formulario validado. Aquí se podría enviar al servidor.");
+});
+botonInicio.addEventListener("click", function() {
+window.location.href = "inicio.html";
+});
+</script>
+</button>
+<br>
+<hr>
+<form action="" method="post">
+<label for="usuario">Usuario:</label>
+<input type="text" id="usuario" name="usuario" required>
+<input type="image" src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" width="30" alt="Enviar formulario">
+</body>
+</html>
