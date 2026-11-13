@@ -25,15 +25,17 @@
         <label for="codigopostal">Codigo Postal</label>
         <input type="text" name="codigopostal" id="codigopostal" pattern="[0-9]{5}">
         <br><br>
-        
-        <input type="submit" name="enviar" id="enviar">
-        
-        <input type="reset" name="limpiar" id="limpiar">
+        <button type="submit">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" alt="Enviar formulario" width="25">
+        </button>
+        <button type="reset">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Brocha.png" alt="Limpiar formulario" width="25">
+        </button>
         
     </form>
     <br>
     <hr>
-    <h2>Matricula DAM</h2>
+    <h2>Ejercicio 2. Matricula DAM</h2>
     <form action="" method="post">
         <fieldset>
             <legend><b>Datos Personales</b></legend>
@@ -90,13 +92,17 @@
         <input type="checkbox" name="modulos" id="modulos" value="entornodesarrollo">
         <label for="entornodesarrollo">Entorno de desarrollo,</label>
         <br><br>
-        <input type="submit" name="enviar" id="enviar">
-        
-        <input type="reset" name="limpiar" id="limpiar">
+        <button type="submit">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" alt="Enviar formulario" width="25">
+        </button>
+        <button type="reset">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Brocha.png" alt="Limpiar formulario" width="25">
+        </button>
 
     </form>
     <br>
     <hr>
+    <h2>Ejercicio 3. Reserva de una sala</h2>
     <form action="" method="post">
         <fieldset>
             <legend><b><font size="4">Responsable</font></b></legend>
@@ -126,6 +132,102 @@
         <input type="time" name="horainicio" id="horainicio">
         <label for="horafinal">Hora final</label>
         <input type="time" name="horafinal" id="horafinal">
+        <br><br>
+        <label for="asistentes">Asistentes</label>
+        <input type="number" name="asistentes" id="asistentes" pattern="[0-9]{25}">
+        <br><br>
+        <label for="sala">Sala</label>
+        <select name="sala" id="sala">
+            <option value="">Seleccione una opcion</option>
+            <option value="sala1">Sala 1</option>
+            <option value="sala2">Sala 2</option>
+            <option value="sala3">Sala 3</option>
+            <option value="sala4">Sala 4</option>
+
+        </select>
+        <br><br>
+        <label for="equipamiento">Equpamiento</label>
+        <br><br>
+
+        <input type="checkbox" name="equipamiento" id="equipamiento" value="balon">
+        <label for="balon">Balon</label>
+        <input type="checkbox" name="equipamiento" id="equipamiento" value="palas">
+        <label for="palas">Palas</label>
+        <input type="checkbox" name="equipamiento" id="equipamiento" value="guantes">
+        <label for="guantes">Guantes</label>
+        <br><br>
+        <button type="submit">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" alt="Enviar formulario" width="25">
+        </button>
+        <button type="reset">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Brocha.png" alt="Limpiar formulario" width="25">
+        </button>
     </form>
+    <br>
+    <hr>
+    <h2>Ejercicio 4. Inscripcion a un curso</h2>
+    <form action="">
+        <label for="datospersonales">Datos Personales</label>
+        <br><br>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br><br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" required>
+        <br><br>
+        <label for="gmail">Correo</label>
+        <input type="gmail" name="gmail" id="gmail">
+        <br><br>
+        <label for="telefono">Telefono</label>
+        <input type="tel" name="telefono" id="telefono">
+        <br><br>
+        <label for="fechanacimiento">Fecha de Nacimiento</label>
+        <input type="date" name="fechanacimiento" id="fechanacimiento">
+        <br><br>
+        <label for="curso">Curso</label>
+        <select name="curso" id="curso">
+            <option value="primero">Primero</option>
+            <option value="segundo">Segundo</option>
+            <option value="tercero">Tercero</option>
+            <option value="cuarto">Cuarto</option>
+        </select>
+        <br><br>
+        <label for="lenguajes">Lenguajes Conocidos</label>
+        <br><br>
+        <input type="checkbox" name="lenguajes" id="lenguajes" value="java">
+        <label for="java">Java</label>
+        <input type="checkbox" name="lenguajes" id="lenguajes" value="phyton">
+        <label for="phyton">Phyton</label>
+        <input type="checkbox" name="lenguajes" id="lenguajes" value="c++">
+        <label for="c++">C++</label>
+        <input type="checkbox" name="lenguajes" id="lenguajes" value="html">
+        <label for="html">HTML</label>
+        <br><br>
+        <label for="disponibilidad">Disponibilidad</label>
+        <br><br>
+        <input type="radio" name="disponibilidad" id="disponibilidad" value="jornadacompleta">
+        <label for="jornadacompleta">Jornada completa</label>
+        <input type="radio" name="disponibilidad" id="disponibilidad" value="jornadapartida">
+        <label for="jornadapartida">Jornada Partida</label>
+        <br><br>
+        <label for="experiencia">Experiencia</label>
+        <br>
+        <textarea name="experiencia" id="experiencia" rows="5" cols="40" maxlength="250"></textarea>
+        <br><br>
+        <label for="document">Documentacion adjunta</label>
+        <br><br>
+        <label for="pdf">Seleccione un archivo en formato pdf</label>
+        <input type="file" name="document" id="document" accept=".pdf">
+        <br><br>
+        <button type="submit">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Buzon.png" alt="Enviar formulario" width="25">
+        </button>
+        <button type="reset">
+        <img src="/Lenguaje de Marcas/Ejercicios/Imagenes/Brocha.png" alt="Limpiar formulario" width="25">
+        </button>
+        
+    </form>
+    <br>
+    <hr>
 </body>
 </html>
