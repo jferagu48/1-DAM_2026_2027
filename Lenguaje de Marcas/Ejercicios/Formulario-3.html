@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio final. Gestión de incidencias informáticas</title>
+</head>
+<body>
+    <h2>Ejercicio final. Gestión de incidencias informáticas</h2>
+     <form action="incidencias.html" method="get">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br><br>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos">
+            <br><br>
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]">
+            <br><br>
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" id="correo">
+            <br><br>
+            <label for="departamento">Departamento</label>
+            <select name="departamento" id="departamento">
+                <option value="">Seleccione una opcion</option>
+                <option value="base de datos">Base de datos</option>
+                <option value="programacion">Programacion</option>
+                <option value="lenguaje de marcas">Lenguaje de Marcas</option>
+            </select>
+            <br><br>
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono" id="telefono">
+        </fieldset>
+        <button type="submit">
+            <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
+        </button>
+        <button type="reset">
+            <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
+        </button>
+        <button type="button" id="inicio">
+            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
+        </button>
+    </form>
+
+        <script>
+    const formulario = document.getElementById("formulario");
+    const botonInicio = document.getElementById("inicio");
+    formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Formulario validado. Aquí se podría enviar al servidor.");
+    });
+    botonInicio.addEventListener("click", function() {
+    window.location.href = "incidencias.html";
+    });
+</script>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="Formulario-3.html" method="post">
+        <fieldset>
+            <legend>Incidencia</legend>
+            <label for="fecha">Fecha</label>
+            <input type="date" name="nombre" id="nombre">
+            <br><br>
+            <label for="hora">Hora</label>
+            <input type="time" name="hora" id="hora">
+            <br><br>
+            <label for="tipos">Tipos</label>
+            <br><br>
+            <input type="checkbox" name="tipos" id="hardware" value="hardware">
+            <label for="hardware">Hardware</label>
+            <input type="checkbox" name="tipos"  id="software" value="software">
+            <label for="software">Software</label>
+            <input type="checkbox" name="tipos"  id="red" value="red">
+            <label for="red">Red</label>
+            <input type="checkbox" name="tipos" id="seguridad" value="seguridad">
+            <label for="seguridad">Seguridad</label>
+            <input type="checkbox" name="tipos"  id="otros" value="otros">
+            <label for="otros">Otros</label>
+            <br><br>
+            <label for="prioridad">Prioridad</label>
+            <br><br>
+            <input type="radio" name="prioridad" id="baja" value="baja">
+            <label for="baja">Baja</label>
+            <input type="radio" name="prioridad" id="media" value="media">
+            <label for="media">Media</label>
+            <input type="radio" name="prioridad" id="alta" value="alta">
+            <label for="alta">Alta</label>
+            <input type="radio" name="prioridad" id="critica" value="critica">
+            <label for="critica">Critica</label>
+            <br><br>
+            <label for="sistemaoperativo">Sistema Operativo</label>
+            <select name="sistemaoperativo" id="sistemaoperativo">
+                <option value="">Seleccione un sistema operativo</option>
+                <option value="windows">Windows</option>
+                <option value="linux">Linux</option>
+                <option value="mac">MAC</option>
+            </select>
+           
+        </fieldset>
+        <fieldset>
+            <legend>Descripcion</legend>
+            <label for="titulo"></label>
+
+        </fieldset>
+        <button type="submit">
+            <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
+        </button>
+        <button type="reset">
+            <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
+        </button>
+        <button type="button" id="inicio">
+            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
+        </button>
+    </form>
+
+</body>
+</html>
