@@ -10,10 +10,12 @@
         <fieldset>
             <legend>Incidencia</legend>
             <label for="fecha">Fecha</label>
-            <input type="date" name="nombre" id="nombre">
+            <br>
+            <input type="date" name="nombre" id="nombre" required>
             <br><br>
             <label for="hora">Hora</label>
-            <input type="time" name="hora" id="hora">
+            <br>
+            <input type="time" name="hora" id="hora" required>
             <br><br>
             <label for="tipos">Tipos</label>
             <br><br>
@@ -49,20 +51,56 @@
            
         </fieldset>
         <fieldset>
-            <legend>Descripcion</legend>
-            <label for="titulo"></label>
-
+            <legend>Descripción</legend>
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" required minlength="5" maxlength="80">
+            <br><br>
+            <label for="descripcion">Descripción detallada</label>
+            <br>
+            <textarea name="descripcion" id="descripcion" rows="5" cols="40" required minlength="20" maxlength="200"></textarea>
+            <br><br>
+            <label for="pasos">Pasos realizados</label>
+            <br>
+            <textarea name="pasos" id="pasos" rows="4" cols="30" required minlength="10" maxlength="150"></textarea>
+            <br><br>
+            <label for="captura">Captura adjunta</label>
+            <input type="file" name="captura" id="captura" accept=".pdf,.jpg">
         </fieldset>
-        <button type="submit">
+
+        <fieldset>
+            <legend>Información adicional</legend>
+            <p>¿Te impide trabajar?</p>
+            <input type="radio" name="impide" id="impide_si" value="si" required>
+            <label for="impide_si">Sí</label>
+            <input type="radio" name="impide" id="impide_no" value="no">
+            <label for="impide_no">No</label>
+
+            <p>¿Afecta a compañeros?</p>
+            <input type="radio" name="afecta" id="afecta_si" value="si" required>
+            <label for="afecta_si">Sí</label>
+            <input type="radio" name="afecta" id="afecta_no" value="no">
+            <label for="afecta_no">No</label>
+            <br><br>
+            <input type="checkbox" name="condiciones" id="condiciones" value="aceptada" required>
+            <label for="condiciones">Acepto las condiciones</label>
+        </fieldset>
+        <button type="submit" id="enviar">
             <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
         </button>
         <button type="reset">
             <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
         </button>
-        <button type="button" id="inicio">
-            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
-        </button>
+        
     </form>
+    
+    <script>
+    const formulario = document.getElementById("enviar");
+    formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Formulario validado. Aquí se podría enviar al servidor.");
+    });
+   
+</script>
 
 </body>
 </html>
