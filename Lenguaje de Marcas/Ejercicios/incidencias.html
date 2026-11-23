@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Incidencias</title>
 </head>
 <body>
     <form action="Formulario-3.html" method="post">
         <fieldset>
-            <legend>Incidencia</legend>
+            <legend><b>Incidencia</b></legend>
             <label for="fecha">Fecha</label>
-            <input type="date" name="nombre" id="nombre">
+            <br>
+            <input type="date" name="nombre" id="nombre" required>
             <br><br>
             <label for="hora">Hora</label>
-            <input type="time" name="hora" id="hora">
+            <br>
+            <input type="time" name="hora" id="hora" required>
             <br><br>
             <label for="tipos">Tipos</label>
-            <br><br>
+            <br>
             <input type="checkbox" name="tipos" id="hardware" value="hardware">
             <label for="hardware">Hardware</label>
             <input type="checkbox" name="tipos"  id="software" value="software">
@@ -29,7 +31,7 @@
             <label for="otros">Otros</label>
             <br><br>
             <label for="prioridad">Prioridad</label>
-            <br><br>
+            <br>
             <input type="radio" name="prioridad" id="baja" value="baja">
             <label for="baja">Baja</label>
             <input type="radio" name="prioridad" id="media" value="media">
@@ -40,7 +42,7 @@
             <label for="critica">Critica</label>
             <br><br>
             <label for="sistemaoperativo">Sistema Operativo</label>
-            <select name="sistemaoperativo" id="sistemaoperativo">
+            <select name="sistemaoperativo" id="sistemaoperativo" required>
                 <option value="">Seleccione un sistema operativo</option>
                 <option value="windows">Windows</option>
                 <option value="linux">Linux</option>
@@ -49,20 +51,60 @@
            
         </fieldset>
         <fieldset>
-            <legend>Descripcion</legend>
-            <label for="titulo"></label>
-
+            <legend><b>Descripcion</b></legend>
+            <label for="titulo">Titulo</label>
+            <br>
+            <input type="text" name="titulo" id="titulo" required>
+            <br><br>
+            <label for="descripcion">Descripcion Detallada</label>
+            <br>
+            <textarea id="descripcion" name="descripcion" rows="5" cols="40" maxlength="200" placeholder="Escribe aqui la descripcion detallada" required></textarea>
+            <br><br>
+            <label for="pasosrealizados">Pasos Realizados</label>
+            <br>
+            <textarea name="descripcion" id="descripcion" rows="5" cols="30" maxlength="150" placeholder="Escribe aqui paso a paso de manera ordenada,Ejemplo: 
+1.Reinicié el equipo.
+2.Comprobé que el cable de red estaba bien conectado.
+3.Probé con otro puerto del router...." ></textarea>
+            <br><br>
+            <label for="capturaadjunta">Captura Adjunta</label>
+            <br>
+            <input type="file" name="capturaadjunta" id="capturaadjunta" accept=".pdf,.jpg" required>
         </fieldset>
-        <button type="submit">
+        <fieldset>
+            <legend><b>Informacion adicional</b></legend>
+            <p>¿Le impide trabajar?</p>
+            <input type="radio" name="impide" id="siimpide" value="SI">
+            <label for="siimpide">SI</label>
+            <input type="radio" name="impide" id="noimpide" value="NO">
+            <label for="noimpide">NO</label>
+            <br><br>
+            <p>¿Afecta esta incidencia a los compañeros?</p>
+            <input type="radio" name="impide" id="siimpide" value="SI">
+            <label for="siimpide">SI</label>
+            <input type="radio" name="impide" id="noimpide" value="NO">
+            <label for="noimpide">NO</label>
+            <br><br>
+            <input type="checkbox" id="privacidad" name="privacidad" value="aceptada" required>
+            <label for="privacidad"><u><i>Acepto la política de privacidad.</i></u></label>
+            <br><br>
+        </fieldset>
+        <button type="submit" id="enviar">
             <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
         </button>
         <button type="reset">
             <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
         </button>
-        <button type="button" id="inicio">
-            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
-        </button>
+    
     </form>
 
+    <script>
+    const formulario = document.getElementById("enviar");
+    formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Formulario validado. Aquí se podría enviar al servidor.");
+    });
+    
+</script>
 </body>
 </html>

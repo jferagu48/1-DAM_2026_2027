@@ -9,7 +9,7 @@
     <h2>Ejercicio final. Gestión de incidencias informáticas</h2>
      <form action="incidencias.html" method="get">
         <fieldset>
-            <legend>Datos Personales</legend>
+            <legend><b>Datos Personales</b></legend>
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre">
             <br><br>
@@ -34,26 +34,21 @@
             <input type="tel" name="telefono" id="telefono">
         </fieldset>
         <button type="submit">
-            <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
+            <img src="Imagenes/flecha-negra-derecha-curva.png" alt="Enviar formulario" width="30">
         </button>
         <button type="reset">
             <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
         </button>
-        <button type="button" id="inicio">
-            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
-        </button>
+        
     </form>
 
         <script>
     const formulario = document.getElementById("formulario");
-    const botonInicio = document.getElementById("inicio");
     formulario.addEventListener("submit", function(event) {
     event.preventDefault();
     alert("Formulario validado. Aquí se podría enviar al servidor.");
     });
-    botonInicio.addEventListener("click", function() {
-    window.location.href = "incidencias.html";
-    });
+    
 </script>
 
     </form>
