@@ -9,18 +9,18 @@
     <h2>Ejercicio final. Gestión de incidencias informáticas</h2>
      <form action="incidencias.html" method="get">
         <fieldset>
-            <legend><b>Datos Personales</b></legend>
+            <legend>Datos Personales</legend>
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" required>
             <br><br>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos">
+            <input type="text" name="apellidos" id="apellidos" required>
             <br><br>
             <label for="dni">DNI</label>
-            <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]">
+            <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]" required>
             <br><br>
             <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo">
+            <input type="email" name="correo" id="correo" required>
             <br><br>
             <label for="departamento">Departamento</label>
             <select name="departamento" id="departamento">
@@ -33,23 +33,28 @@
             <label for="telefono">Telefono</label>
             <input type="tel" name="telefono" id="telefono">
         </fieldset>
-        <button type="submit">
-            <img src="Imagenes/flecha-negra-derecha-curva.png" alt="Enviar formulario" width="30">
+        <button type="submit" id="enviar">
+            <img src="Imagenes/Flecha.png" alt="Enviar formulario" width="30">
         </button>
         <button type="reset">
             <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
         </button>
-        
+        <button type="button" id="inicio">
+            <img src="Imagenes/Home.png" alt="Ir a inicio" width="30">
+        </button>
     </form>
 
-        <script>
+    <script>
     const formulario = document.getElementById("formulario");
+    const botonInicio = document.getElementById("inicio");
     formulario.addEventListener("submit", function(event) {
     event.preventDefault();
     alert("Formulario validado. Aquí se podría enviar al servidor.");
     });
-    
-</script>
+    botonInicio.addEventListener("click", function() {
+    window.location.href = "incidencias.html";
+    });
+    </script>
 
     </form>
 </body>

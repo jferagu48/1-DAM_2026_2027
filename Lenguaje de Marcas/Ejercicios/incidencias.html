@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incidencias</title>
+    <title>Document</title>
 </head>
 <body>
     <form action="Formulario-3.html" method="post">
         <fieldset>
-            <legend><b>Incidencia</b></legend>
+            <legend>Incidencia</legend>
             <label for="fecha">Fecha</label>
             <br>
             <input type="date" name="nombre" id="nombre" required>
@@ -18,7 +18,7 @@
             <input type="time" name="hora" id="hora" required>
             <br><br>
             <label for="tipos">Tipos</label>
-            <br>
+            <br><br>
             <input type="checkbox" name="tipos" id="hardware" value="hardware">
             <label for="hardware">Hardware</label>
             <input type="checkbox" name="tipos"  id="software" value="software">
@@ -31,7 +31,7 @@
             <label for="otros">Otros</label>
             <br><br>
             <label for="prioridad">Prioridad</label>
-            <br>
+            <br><br>
             <input type="radio" name="prioridad" id="baja" value="baja">
             <label for="baja">Baja</label>
             <input type="radio" name="prioridad" id="media" value="media">
@@ -42,7 +42,7 @@
             <label for="critica">Critica</label>
             <br><br>
             <label for="sistemaoperativo">Sistema Operativo</label>
-            <select name="sistemaoperativo" id="sistemaoperativo" required>
+            <select name="sistemaoperativo" id="sistemaoperativo">
                 <option value="">Seleccione un sistema operativo</option>
                 <option value="windows">Windows</option>
                 <option value="linux">Linux</option>
@@ -51,43 +51,38 @@
            
         </fieldset>
         <fieldset>
-            <legend><b>Descripcion</b></legend>
-            <label for="titulo">Titulo</label>
-            <br>
-            <input type="text" name="titulo" id="titulo" required>
+            <legend>Descripción</legend>
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" required minlength="5" maxlength="80">
             <br><br>
-            <label for="descripcion">Descripcion Detallada</label>
+            <label for="descripcion">Descripción detallada</label>
             <br>
-            <textarea id="descripcion" name="descripcion" rows="5" cols="40" maxlength="200" placeholder="Escribe aqui la descripcion detallada" required></textarea>
+            <textarea name="descripcion" id="descripcion" rows="5" cols="40" required minlength="20" maxlength="200"></textarea>
             <br><br>
-            <label for="pasosrealizados">Pasos Realizados</label>
+            <label for="pasos">Pasos realizados</label>
             <br>
-            <textarea name="descripcion" id="descripcion" rows="5" cols="30" maxlength="150" placeholder="Escribe aqui paso a paso de manera ordenada,Ejemplo: 
-1.Reinicié el equipo.
-2.Comprobé que el cable de red estaba bien conectado.
-3.Probé con otro puerto del router...." ></textarea>
+            <textarea name="pasos" id="pasos" rows="4" cols="30" required minlength="10" maxlength="150"></textarea>
             <br><br>
-            <label for="capturaadjunta">Captura Adjunta</label>
-            <br>
-            <input type="file" name="capturaadjunta" id="capturaadjunta" accept=".pdf,.jpg" required>
+            <label for="captura">Captura adjunta</label>
+            <input type="file" name="captura" id="captura" accept=".pdf,.jpg">
         </fieldset>
+
         <fieldset>
-            <legend><b>Informacion adicional</b></legend>
-            <p>¿Le impide trabajar?</p>
-            <input type="radio" name="impide" id="siimpide" value="SI">
-            <label for="siimpide">SI</label>
-            <input type="radio" name="impide" id="noimpide" value="NO">
-            <label for="noimpide">NO</label>
+            <legend>Información adicional</legend>
+            <p>¿Te impide trabajar?</p>
+            <input type="radio" name="impide" id="impide_si" value="si" required>
+            <label for="impide_si">Sí</label>
+            <input type="radio" name="impide" id="impide_no" value="no">
+            <label for="impide_no">No</label>
+
+            <p>¿Afecta a compañeros?</p>
+            <input type="radio" name="afecta" id="afecta_si" value="si" required>
+            <label for="afecta_si">Sí</label>
+            <input type="radio" name="afecta" id="afecta_no" value="no">
+            <label for="afecta_no">No</label>
             <br><br>
-            <p>¿Afecta esta incidencia a los compañeros?</p>
-            <input type="radio" name="impide" id="siimpide" value="SI">
-            <label for="siimpide">SI</label>
-            <input type="radio" name="impide" id="noimpide" value="NO">
-            <label for="noimpide">NO</label>
-            <br><br>
-            <input type="checkbox" id="privacidad" name="privacidad" value="aceptada" required>
-            <label for="privacidad"><u><i>Acepto la política de privacidad.</i></u></label>
-            <br><br>
+            <input type="checkbox" name="condiciones" id="condiciones" value="aceptada" required>
+            <label for="condiciones">Acepto las condiciones</label>
         </fieldset>
         <button type="submit" id="enviar">
             <img src="Imagenes/Buzon.png" alt="Enviar formulario" width="30">
@@ -95,16 +90,17 @@
         <button type="reset">
             <img src="Imagenes/Brocha.png" alt="Limpiar formulario" width="30">
         </button>
-    
+        
     </form>
-
+    
     <script>
     const formulario = document.getElementById("enviar");
     formulario.addEventListener("submit", function(event) {
     event.preventDefault();
     alert("Formulario validado. Aquí se podría enviar al servidor.");
     });
-    
+   
 </script>
+
 </body>
 </html>
