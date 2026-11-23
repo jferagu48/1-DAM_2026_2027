@@ -30,14 +30,16 @@
     <&amp> &
     <&quot> ""
     Enlaces
-    <a href="direccion">Aqui el texto
+    <a href="direccion" target=donde se abrira el destino name=crear ancla id=Identificador de un elemento
+    tittle= eltexto sale al pasar el raton 
+    rel=Relación entre la página actual y el destino(nofollow, noopener, noreferrer, external, author, help, next, prev)>Aqui el texto
     <a name="nombre del ancla">
         <a href="#nombre del ancla">
     Lista
-    <ol> lista ordenadas
+    <ol> lista ordenadas (type="a,1,I"/reversed(se escribe a reves lo numero:5,4,3)/start(Num desde el que empieza))
         <li> cada elemento en un li
     complementos start="x" donde empieza a contar, type=tipo numerico, romano.
-    <ul> lista desordenadas
+    <ul> lista desordenadas (type="square, circle, disc, ")
         <li> cada elemento en un li
 
     Imagenes
@@ -51,7 +53,8 @@
     bgcolor color de fondo.
     text color de texto.
     link cambia color de enlace.
-    alink cambia color de enlace cuando lo usas.
+    vlink	Enlaces ya visitados (por defecto morado)
+    alink	Enlace en el momento de hacer clic (por defecto rojo)
 
     Formularios
     <form action="url que gestiona" method="post(envia) get (recibe)"> etiqueta para crear en si el formulario.
@@ -84,8 +87,13 @@
     Mapa de imagenes(pagina de intenet 'image-map.net´)
 
     Tablas
-    <table border="grosor de borde" cellspacing="Separacion de celdas" cellpadding="pixeles entre borde y contenido" width align> etiqueta para crear tabla en si.
-        <caption> etiqueta la tabla.
+    <table border="grosor de borde" cellspacing="Separacion de celdas" cellpadding="pixeles entre borde y contenido" 
+    width=ancho de tabla heigth=alto de tabla align=alinacion de la tabla en la pag bcolor=color de fondo
+    bordercolor=color del borde 
+    frame=que lado de borde exterior se ve(void, above, below, hsides, vsides, lhs, rhs, box, border)
+    rules=que lineas internas se ve(none, all, rows, cols, groups)> etiqueta para crear tabla en si.
+        <caption aling> etiqueta la tabla.
+        <colgroup span=cuantas aling width,valign= alinacion vertical (top, middle, bottom, baseline)> y <col>
         <thead> cabezera de la tabla
         <tr> define filas
         <th> define columnas solo en cabezera.
@@ -95,8 +103,12 @@
     
     Marcos(Frames)
     No usamos body de cuerpo principal.
-    <frameset cols="define num de columna y tamaño con%, num o *(no tan utulizado en clase)"> se empieza con esta etiqueta el frame
-        <frame> determina caracteristicas del frame
+    <frameset cols="define num de columna y tamaño (con%, num o *(no tan utulizado en clase))"
+    rows=divide en filas border frameborder=muestra u oculta el borde entre frame
+    framespacing=espacio entre frame> se empieza con esta etiqueta el frame
+        <frame scr name=determina para usarlo en target noresize(impide que el usuario modifique tamaño)
+        marginwidth	Margen izquierdo y derecho dentro del frame
+        marginheight	Margen superior e inferior dentro del frame> determina caracteristicas del frame
              name, src, scrolling="activar barra de desplazamiento si o no(auto por defecto)"
              noresize=no mover tamaño de frame.
              frameborder="borde del frame"
