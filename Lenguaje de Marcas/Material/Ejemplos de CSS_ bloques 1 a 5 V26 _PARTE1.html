@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ejemplos de CSS: bloques 1 a 5</title>
+<style>
+:root{--bg:#f8fafc;--fg:#1e293b;--card:#fff;--bd:#cbd5e1;--ac:#1d4ed8;--code:#0f172a;--codefg:#e2e8f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f172a;--fg:#e2e8f0;--card:#1e293b;--bd:#334155;--ac:#93c5fd;--code:#020617}}
+:root[data-theme="dark"]{--bg:#0f172a;--fg:#e2e8f0;--card:#1e293b;--bd:#334155;--ac:#93c5fd;--code:#020617}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+h1{margin:0 0 4px}
+.sub{margin:0 0 24px;opacity:.8}
+.ex{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:24px}
+.ex h2{margin:0 0 4px;font-size:1.15rem;color:var(--ac)}
+.ex p{margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.lbl{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;opacity:.7;margin-bottom:4px}
+pre{margin:0;background:var(--code);color:var(--codefg);border-radius:8px;padding:12px;overflow-x:auto;font:13px/1.5 ui-monospace,Consolas,monospace;max-width:100%}
+.res{display:block;border:1px dashed var(--bd);border-radius:8px;overflow-x:auto}
+</style>
+</head>
+<body>
+<main>
+<h1>Ejemplos de CSS: bloques 1 a 5</h1>
+<p class="sub">Cada ejemplo muestra el código comentado a la izquierda y su resultado real a la derecha. Pasa el ratón por los resultados: algunos reaccionan.</p>
+
+<section class="ex">
+<h2>Ejemplo 1 · Bloque 1</h2>
+<p><strong>Qué ejemplificamos:</strong> la anatomía de una regla CSS (selector, propiedad y valor) aplicada a etiquetas HTML.</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+/* selector { propiedad: valor; } */
+h1 {
+  color: darkblue;     /* color del texto */
+  font-size: 1.6rem;   /* tamaño relativo a la raíz */
+}
+p {
+  color: #555;         /* color en hexadecimal */
+  line-height: 1.5;    /* interlineado */
+}
+</style>
+<h1>Hola, CSS</h1>
+<p>Este párrafo recibe su estilo desde la hoja.</p>
+</script>
+</section>
+
+<section class="ex">
+<h2>Ejemplo 2 · Bloque 2</h2>
+<p><strong>Qué ejemplificamos:</strong> distintos tipos de selector: clase, hijo directo, pseudoclases (<code>:nth-child</code>, <code>:hover</code>), atributo y pseudoelemento.</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+ul { list-style: none; padding: 0; }
+/* hijo directo: solo los li de este ul */
+ul > li { padding: 4px 8px; }
+/* pseudoclase: filas pares */
+li:nth-child(even) { background: #e0e7ff; }
+/* clase */
+.destacado { background: gold; font-weight: bold; }
+/* pseudoclase: al pasar el ratón */
+li:hover { background: #bbf7d0; }
+/* selector de atributo: enlaces a PDF */
+a[href$=".pdf"] { color: crimson; }
+/* pseudoelemento: añade texto sin tocar el HTML */
+a[href$=".pdf"]::after { content: " (PDF)"; }
+</style>
+<ul>
+  <li>Uno</li>
+  <li>Dos</li>
+  <li class="destacado">Tres (clase)</li>
+  <li>Cuatro</li>
+</ul>
+<a href="#guia.pdf" onclick="return false">Descargar guía</a>
+</script>
+</section>
+
+<section class="ex">
+<h2>Ejemplo 3 · Bloque 3</h2>
+<p><strong>Qué ejemplificamos:</strong> color (degradado y transparencia con <code>rgba</code>), unidades relativas (<code>rem</code>) y tipografía (familia, tamaño y sombra de texto).</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+.hero {
+  /* degradado diagonal como fondo */
+  background: linear-gradient(135deg, #1d4ed8, #9333ea);
+  color: white;
+  padding: 1.5rem;        /* rem: relativo a la fuente raíz */
+  text-align: center;
+  border-radius: 8px;
+}
+.hero h2 {
+  font-family: Georgia, serif;   /* pila de fuentes con genérica */
+  font-size: 2rem;
+  margin: 0 0 .5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+}
+.etiqueta {
+  display: inline-block;
+  /* rgba: solo el fondo es translúcido, el texto no */
+  background: rgba(255,255,255,.25);
+  padding: .25rem .75rem;
+  border-radius: 999px;
+}
+</style>
+<div class="hero">
+  <h2>Título con degradado</h2>
+  <p>Texto con unidades relativas.</p>
+  <span class="etiqueta">rgba translúcido</span>
+</div>
+</script>
+</section>
+
+<section class="ex">
+<h2>Ejemplo 4 · Bloque 4</h2>
+<p><strong>Qué ejemplificamos:</strong> el modelo de caja: <code>padding</code>, <code>border</code>, <code>margin</code>, <code>border-radius</code>, sombra y <code>box-sizing: border-box</code>.</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+.tarjeta {
+  box-sizing: border-box;   /* el width incluye padding y borde */
+  width: 260px;             /* ancho total visible: 260 px */
+  padding: 20px;            /* espacio interior */
+  border: 2px solid #1d4ed8;
+  border-radius: 12px;      /* esquinas redondeadas */
+  margin: 0 auto;           /* centrada: bloque + ancho definido */
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+.tarjeta h3 { margin: 0 0 8px; }
+.boton {
+  display: inline-block;    /* admite padding vertical */
+  padding: 8px 16px;
+  background: #1d4ed8;
+  color: white;
+  border-radius: 8px;
+}
+</style>
+<div class="tarjeta">
+  <h3>Tarjeta</h3>
+  <p>Mide 260 px en total gracias a border-box.</p>
+  <span class="boton">Ver más</span>
+</div>
+</script>
+</section>
+
+<section class="ex">
+<h2>Ejemplo 5 · Bloque 5 (display)</h2>
+<p><strong>Qué ejemplificamos:</strong> la diferencia entre <code>display: inline</code>, <code>block</code> e <code>inline-block</code>.</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+.caja { padding: 6px 10px; margin: 4px; background: #bfdbfe; }
+/* inline: fluye como texto e ignora width */
+.linea { display: inline; width: 300px; }
+/* block: ocupa todo el ancho disponible */
+.bloque { display: block; }
+/* inline-block: en línea, pero respeta width */
+.mixta { display: inline-block; width: 110px; text-align: center; }
+</style>
+<span class="caja linea">inline</span>
+<span class="caja linea">inline</span>
+<div class="caja bloque">block (ancho completo)</div>
+<span class="caja mixta">inline-block</span>
+<span class="caja mixta">inline-block</span>
+</script>
+</section>
+
+<section class="ex">
+<h2>Ejemplo 6 · Bloque 5 (position)</h2>
+<p><strong>Qué ejemplificamos:</strong> <code>position: relative</code> como referencia de un hijo <code>absolute</code> (una insignia y un tooltip que aparece al pasar el ratón).</p>
+<div class="grid"><div><div class="lbl">Código</div><pre><code></code></pre></div><div><div class="lbl">Resultado</div><div class="res"></div></div></div>
+<script type="text/plain">
+<style>
+.tarjeta {
+  position: relative;        /* referencia para los hijos absolutos */
+  width: 230px;
+  padding: 20px;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
+}
+.insignia {
+  position: absolute;        /* fuera del flujo, respecto a .tarjeta */
+  top: -10px;
+  right: -10px;
+  background: crimson;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: .8rem;
+}
+.ayuda { position: relative; cursor: help; border-bottom: 1px dotted; }
+.globo {
+  display: none;             /* oculto por defecto */
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+/* aparece solo al pasar el ratón por .ayuda */
+.ayuda:hover .globo { display: block; }
+</style>
+<div class="tarjeta">
+  <span class="insignia">NUEVO</span>
+  <p>Producto con <span class="ayuda">ayuda<span class="globo">Soy un tooltip</span></span></p>
+</div>
+</script>
+</section>
+</main>
+<script>
+document.querySelectorAll('.ex').forEach(function(ex){
+  var src=ex.querySelector('script[type="text/plain"]').textContent.trim();
+  ex.querySelector('pre code').textContent=src;
+  var sr=ex.querySelector('.res').attachShadow({mode:'open'});
+  sr.innerHTML='<style>:host{display:block}.w{font:16px/1.6 system-ui,sans-serif;color:#222;background:#fff;padding:28px 24px}</style><div class="w">'+src+'</div>';
+});
+</script>
+</body>
+</html>

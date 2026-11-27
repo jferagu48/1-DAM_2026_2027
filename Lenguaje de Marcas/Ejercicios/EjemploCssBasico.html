@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba de viewport</title>
+<style>
+body { font-size: 1rem; background: white; }
+@media (max-width: 600px) { /*media efecto de cuadrar la pagina alo asignado (tamaño inferior a media afecta los atributos asignados)entra{}*/
+                            /*Trabajar con medidas relativas no absolutas,vw(viewpost+width)=Coge el 20% del ancho de la pantalla completa, vh(viewpost+height)=Coge el 20% del alto de la pantalla completa*/
+    body { background: orange; }
+}
+</style>
+</head>
+<body>
+<h1>¿Se ve naranja en el móvil?</h1>
+<p>Comprueba el comportamiento con y sin la etiqueta viewport.</p>
+</body>
+</html>
